@@ -6,14 +6,18 @@
   "directories": {
     "example": "example"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veiset/markdown-api-parser.git"
+  },
   "scripts": {
     "compile": "babel src/ -d dist/",
     "prepublish": "npm run compile",
     "example": "babel-node example/example-default-parser.js"
   },
   "main": "dist/main.js",
-  "author": "",
-  "license": "ISC",
+  "author": "veiset <veiset@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "event-stream": "^3.3.1",
     "glob": "^5.0.15",
