@@ -4,7 +4,7 @@ Takes markdown files and generates a data set suitable for using as an API.
 
 ## Usage
 
-```
+```js
 import { defaultParser, processFiles } from 'markdown-api-parser';
 
 processFiles('example/markdown/*.md', defaultParser, (result) => {
