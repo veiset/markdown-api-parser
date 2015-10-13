@@ -1,0 +1,25 @@
+{
+  "name": "markdown-api-parser",
+  "version": "1.0.0",
+  "description": "Parsing markdown files made easy",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "compile": "babel -d src/ dist/",
+    "prepublish": "npm run compile",
+    "example": "babel-node example/example-default-parser.js"
+  },
+  "main": "dist/main.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "event-stream": "^3.3.1",
+    "glob": "^5.0.15",
+    "stream-reduce": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23"
+  }
+}
