@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "compile": "babel -d src/ dist/",
+    "compile": "babel src/ -d dist/",
     "prepublish": "npm run compile",
     "example": "babel-node example/example-default-parser.js"
   },
