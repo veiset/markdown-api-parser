@@ -1,8 +1,8 @@
 {
   "name": "markdown-api-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parsing markdown files made easy",
-  "main": "index.js",
+  "main": "dist/main.js",
   "directories": {
     "example": "example"
   },
@@ -15,12 +15,12 @@
     "prepublish": "npm run compile",
     "example": "babel-node example/example-default-parser.js"
   },
-  "main": "dist/main.js",
   "author": "veiset <veiset@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "event-stream": "^3.3.1",
     "glob": "^5.0.15",
+    "q": "^1.4.1",
     "stream-reduce": "^1.0.3"
   },
   "devDependencies": {

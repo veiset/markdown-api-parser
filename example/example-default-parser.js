@@ -1,8 +1,6 @@
 import { defaultParser, processFiles } from '../src/main';
 
-processFiles('example/markdown/*.md', defaultParser, (result) => {
-    console.log(result);
-});
+processFiles('example/markdown/*.md').then(data => console.log(data));
 
 /*
 console.log:

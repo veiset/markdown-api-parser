@@ -1,12 +1,16 @@
+import Q from 'q';
 import es from 'event-stream';
 import reduce from 'stream-reduce';
 import glob from 'glob';
 import { createReadStream } from 'fs';
+import { defaultParser } from './parser';
 
 const dataAsList = () => reduce((list, data) => list.concat(data), []);
 const processFile = (parser, file) => es.map((data, cb) => cb(null, parser(file, data)));
 
-export function processFiles(filepath, parser, callback) {
+export function processFiles(filepath, parser=defaultParser) {
+    const defer = Q.defer();
+
     glob(filepath, {}, (er, files) => {
         const streams = files.map(file => 
             createReadStream(file)
@@ -14,8 +18,10 @@ export function processFiles(filepath, parser, callback) {
 
         es.merge(...streams)
             .pipe(dataAsList())
-            .on('data', callback);
+            .on('data', defer.resolve);
     });
+
+    return defer.promise;
 }
 
 

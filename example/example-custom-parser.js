@@ -5,9 +5,7 @@ function countLines(filename, content) {
     return {filename, lines};
 };
 
-processFiles('example/markdown/*.md', countLines, (result) => {
-    console.log(result);
-});
+processFiles('example/markdown/*.md', countLines).then(d => console.log(d));
 
 /*
 console.log:
