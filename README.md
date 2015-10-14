@@ -56,7 +56,7 @@ name: Example 2
 ## Custom parser
 
 ```js
-import { processFiles } from '../src/main';
+import { processFiles } from 'markdown-api-parser';
 
 function countLines(filename, content) {
     const lines = content.toString('utf8').split('\n').length;
