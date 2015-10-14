@@ -1,6 +1,6 @@
 {
   "name": "markdown-api-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Parsing markdown files made easy",
   "main": "dist/main.js",
   "directories": {
