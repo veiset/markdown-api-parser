@@ -2,11 +2,24 @@
 
 Takes markdown files and generates a data set suitable for using as an API.
 
+## Install
+
+`npm install markdown-api-parser`
+
 ## Usage
+
+For ES2015 / ES6:
 
 ```js
 import { processFiles } from 'markdown-api-parser';
 processFiles('example/markdown/*.md').then(data => console.log(data));
+```
+
+ES5:
+
+```js
+var processFiles = require('markdown-api-parser').processFiles;
+processFiles('example/markdown/*.md').then(function(data) { console.log(data) });
 ```
 
 
