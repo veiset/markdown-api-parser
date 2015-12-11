@@ -11,8 +11,11 @@ const processFile = (parser, file) => es.map((data, cb) => cb(null, parser(file,
 export function processFiles(filepath, parser=defaultParser) {
     const defer = Q.defer();
 
-    glob(filepath, {}, (er, files) => {
-        const streams = files.map(file => 
+    glob(filepath, {}, (err, files) => {
+        if(err || !files.length) {
+            return defer.reject(err ? err : { error: 'No files match' });
+        }
+        const streams = files.map(file =>
             createReadStream(file)
                 .pipe(processFile(parser, file)));
 
@@ -23,5 +26,3 @@ export function processFiles(filepath, parser=defaultParser) {
 
     return defer.promise;
 }
-
-
